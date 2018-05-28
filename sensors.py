@@ -405,6 +405,7 @@ class MemSensor(BaseSensor):
             grep("MemAvailable", meminfo))[0]
         return 100 - 100 * int(available) / float(total)
 
+
 class GpuSensor(BaseSensor):
     name = 'gpu'
     desc = _('Physical memory in use.')
@@ -416,6 +417,7 @@ class GpuSensor(BaseSensor):
         """It gets the total memory info and return the used in percent."""
         use,total,_ = re.findall('\d+MiB/\d+MiB',os.popen("nvidia-smi").read().replace(' ',''))[0].replace('/','').split("MiB")
         return 100 * int(use) / float(total)
+
 
 class NetSensor(BaseSensor):
     name = 'net'
