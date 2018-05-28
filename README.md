@@ -17,4 +17,4 @@ To remove:
     
 Runing  
 
-![]()    
+![](https://github.com/Super-Tree/indicator-sysmonitor/raw/master/running_pic.png)    
