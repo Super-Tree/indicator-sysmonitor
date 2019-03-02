@@ -25,7 +25,8 @@ import psutil as ps
 ps_v1_api = int(ps.__version__.split('.')[0]) <= 1
 
 
-B_UNITS = ['', 'KB', 'MB', 'GB', 'TB']
+# B_UNITS = ['', 'KB', 'MB', 'GB', 'TB']
+B_UNITS = [' B', 'KB', 'MB', 'GB', 'TB']
 cpu_load = []
 
 
@@ -35,7 +36,7 @@ def bytes_to_human(bytes_):
         unit += 1
         bytes_ /= 1024
 
-    return '{:d}{:2}'.format(int(bytes_), B_UNITS[unit])
+    return '{:0>5.2f}{:0>2}'.format(int(bytes_), B_UNITS[unit])
 
 
 class ISMError(Exception):
